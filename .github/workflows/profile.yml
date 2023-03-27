@@ -1,0 +1,20 @@
+name: Update Profile Metrics
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  update-profile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Generate Metrics
+        uses: lowlighter/metrics@latest
+        with:
+          # Configuration options here
+          # For example:
+          user: sushil37
+          template: classic
+          base: header, activity, community, repositories
